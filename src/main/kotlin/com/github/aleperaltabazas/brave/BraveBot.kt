@@ -21,8 +21,16 @@ import kotlinx.coroutines.delay
 import org.slf4j.LoggerFactory
 import retrofit2.Retrofit
 import retrofit2.converter.jackson.JacksonConverterFactory
+import spark.Spark
 
 suspend fun main() {
+    val port = ProcessBuilder().environment()
+        ?.get("PORT")
+        ?.toInt() ?: 9290
+
+    Spark.port(port)
+    Spark.get("/*") { req, res -> "I feel fantastic and I'm still alive" }
+
     val config = ConfigFactory.load()
     val client = Kord(config.getString("discord.bot.token"))
 
