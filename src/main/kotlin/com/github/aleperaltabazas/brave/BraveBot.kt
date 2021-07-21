@@ -28,6 +28,8 @@ suspend fun main() {
         ?.get("PORT")
         ?.toInt() ?: 9290
 
+    LOGGER.info("Using port $port")
+
     Spark.port(port)
     Spark.get("/*") { req, res -> "I feel fantastic and I'm still alive" }
 
