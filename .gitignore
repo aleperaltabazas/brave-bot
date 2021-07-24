@@ -149,4 +149,3 @@ buildNumber.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/maven,linux,kotlin,intellij+all
 sensitive.conf
-units.csv
