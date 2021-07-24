@@ -20,7 +20,7 @@ jobs:
       - name: Build
         env:
           TOKEN: ${{secrets.DISCORD_TOKEN}}
-        run: echo "discord.bot.token=\"$DISCORD_TOKEN\"" > src/main/resources/sensitive.conf
+        run: echo "discord.bot.token=\"TOKEN\"" > src/main/resources/sensitive.conf
       - name: Deploy to heroku
         env:
           HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
